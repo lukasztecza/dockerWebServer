@@ -1,0 +1,25 @@
+version: "3"
+
+networks:
+    network-stack_webnet:
+        external: true
+
+services:
+    web-server:
+        image: web-server:latest
+        build: "/vagrant/web-server/."
+        deploy:
+            replicas: 1
+            resources:
+                limits:
+                    cpus: "0.1"
+                    memory: 50M
+            restart_policy:
+                condition: on-failure
+        ports:
+            - "80:80"
+        volumes:
+            - "/vagrant/assets:/var/www/html/assets"
+        networks:
+            - network-stack_webnet
+
