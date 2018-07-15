@@ -7,7 +7,6 @@ networks:
 services:
     web-server:
         image: web-server:latest
-        build: "/vagrant/web-server/."
         deploy:
             replicas: 1
             resources:
@@ -19,7 +18,7 @@ services:
         ports:
             - "80:80"
         volumes:
-            - "/vagrant/assets:/var/www/html/public/assets"
+            - "/app/assets:/var/www/html/public/assets"
         networks:
             - network-stack_webnet
 
