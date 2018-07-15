@@ -19,7 +19,7 @@ services:
         ports:
             - "80:80"
         volumes:
-            - "/vagrant/assets:/var/www/html/assets"
+            - "/vagrant/assets:/var/www/html/public/assets"
         networks:
             - network-stack_webnet
 
