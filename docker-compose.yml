@@ -6,7 +6,7 @@ networks:
         external: true
 
 services:
-    web-server:
+    docker-web-server:
         image: docker-web-server:latest
         deploy:
             replicas: 1
@@ -18,7 +18,8 @@ services:
                 condition: on-failure
         ports:
             - "80:80"
-        volumes:
-            - "./assets:/var/www/html/public/assets"
+# web server assets volume
+#        volumes:
+#            - "./../devAssets:/var/www/html/public/assets"
         networks:
             - default-network
