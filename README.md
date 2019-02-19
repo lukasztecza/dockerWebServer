@@ -15,6 +15,10 @@ Init swarm manager and create external network
 ```
 bash 2_init.sh
 ```
+To leave the swarm (do not do it now)
+```
+docker swarm leave --force
+```
 It is possible that your local environment has multiple addresses on interface that swarm wants to use, if so then choose one and pass it
 ```
 ifconfig
@@ -112,16 +116,12 @@ docker service scale rest-app_rest-app=5
 ```
 You may need to restart web-server if so just scale it down to 0 and back to 1
 ```
-docker service scale dnw_web-server=0
-docker service scale dnw_web-server=1
+docker service scale docker-web-server_docker-web-server=0
+docker service scale docker-web-server_docker-web-server=1
 ```
 You can remove stack
 ```
 docker stack rm rest-app
-```
-And leave the swarm
-```
-docker swarm leave --force 
 ```
 
 ### Other notes
