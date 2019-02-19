@@ -28,7 +28,16 @@ By default docker-web-server points to fastcgi script on port 9000 of the app co
 ```
 www.{service_name_that_will_be_pointed_to}.com
 ```
-assumes that front controller lives in `/var/www/http/public/app.php` and assumes that assets live in `/var/www/http/public/assets`
+and assumes that front controller lives in
+```
+/var/www/http/public/app.php
+````
+and assumes that assets live in
+```
+/var/www/http/public/assets
+```
+mount this directory using volume in `docker-compose.yml`
+
 
 ### Using for other apps
 Now you can deploy stacks with your apps for instance your app could look like this
