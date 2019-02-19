@@ -1,7 +1,4 @@
-FROM nginx:1.15.1
-
-RUN apt-get update
-RUN apt-get install -y vim curl
+FROM nginx:1.15.3-alpine
 
 RUN rm /etc/nginx/conf.d/*
 COPY front-default.conf /etc/nginx/conf.d/front-default.conf
