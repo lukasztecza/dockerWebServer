@@ -123,3 +123,9 @@ And leave the swarm
 ```
 docker swarm leave --force 
 ```
+
+### Other notes
+From within docker container you can point to a different php container that is behind php-fpm using url
+```
+docker-web-server/{docker_container_app_points_to}/{path_that_will_be_followed_to_container_app}
+```
